@@ -1,4 +1,9 @@
-.rootApp {
-    margin: 20px 200px;
-    color: darkblue;
+body {
+    background-color: #F3F7FA;
+    margin: 0;
+}
+
+.searchingPage {
+    display: flex;
+    justify-content: center;
 }
