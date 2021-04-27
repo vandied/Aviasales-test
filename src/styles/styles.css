@@ -1,9 +1,14 @@
 body {
     background-color: #F3F7FA;
-    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .searchingPage {
     display: flex;
     justify-content: center;
+}
+
+.searchingPage [class*="transferContainer"] {
+    margin-right: 16px;
 }
