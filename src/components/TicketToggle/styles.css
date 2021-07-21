@@ -1,0 +1,42 @@
+.toggleGroup {
+	display: flex;
+	margin-bottom: 15px;
+}
+
+.toggleGroup input[type=radio] {
+	display: none;
+}
+
+.toggleGroup label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 15px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 20px;
+	border: 1px solid #999;
+	border-right: none;
+
+}
+
+.toggleGroup .toggleItem:first-child label {
+	border-bottom-left-radius: 6px;
+	border-top-left-radius: 6px;
+}
+
+.toggleGroup .toggleItem:last-child label {
+	border-right: 1px solid #999;
+	border-bottom-right-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+.toggleGroup input[type=radio]:checked + label {
+	background: #2196F3;
+	color: #fff;
+	border-color: #2196F3;
+}
+
+.toggleGroup label:hover {
+	color: #2196F3;
+}
