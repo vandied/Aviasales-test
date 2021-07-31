@@ -1,0 +1,1 @@
+export { SearchingPage } from './SearchingPage';

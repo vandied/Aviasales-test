@@ -1,16 +1,16 @@
 export const toggleValues = [
     {
-        id: 1,
+        id: 'cheapest',
         value: 'cheapest',
         title: 'Самый дешевый',
     },
     {
-        id: 2,
+        id: 'fastest',
         value: 'fastest',
         title: 'Самый быстрый',
     },
     {
-        id: 3,
+        id: 'optimum',
         value: 'optimum',
         title: 'Оптимальный',
     },

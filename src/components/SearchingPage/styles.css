@@ -1,0 +1,10 @@
+
+.searchingPage {
+	display: flex;
+	padding: 0 100px;
+	margin-bottom: 50px;
+}
+
+.searchingResults {
+	min-width: 500px;
+}
