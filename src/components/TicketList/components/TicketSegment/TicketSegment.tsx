@@ -7,28 +7,32 @@ interface Props {
 }
 
 export const TicketSegment: FC<Props> = ({ segment }) => {
-    const a;
+    const stopsCountSuffix = segment.stops.length === 1 ? 'ПЕРЕСАДКА' : 'ПЕРЕСАДКИ';
+
+    const segmentInfo = {
+        route: {
+            title: `${segment.origin} - ${segment.destination}`,
+            details: segment.date,
+        },
+        length: { title: 'В ПУТИ', details: segment.duration },
+        stops: {
+            title: `${segment.stops.length} ${stopsCountSuffix}`,
+            details: segment.stops.join(', '),
+        },
+    };
 
     return (
         <div className={css.ticketSegment}>
-            <div className={css.ticketSegmentInfo}>
-                <span className={css.ticketSegmentInfoTitle}>
-                    {segment.origin} - {segment.destination}
-                </span>
-                <span className={css.ticketSegmentInfoDetails}>{segment.date}</span>
-            </div>
-            <div className={css.ticketSegmentInfo}>
-                <span className={css.ticketSegmentInfoTitle}>В ПУТИ</span>
-                <span className={css.ticketSegmentInfoDetails}>{segment.duration}</span>
-            </div>
-            <div className={css.ticketSegmentInfo}>
-                <span className={css.ticketSegmentInfoTitle}>
-                    {segment.stops.length} ПЕРЕСАДКИ
-                </span>
-                <span className={css.ticketSegmentInfoDetails}>
-                    {segment.stops.join(', ')}
-                </span>
-            </div>
+            {Object.keys(segmentInfo).map((item) => (
+                <div className={css.ticketSegmentInfo} key={item}>
+                    <span className={css.ticketSegmentInfoTitle}>
+                        {segmentInfo[item].title}
+                    </span>
+                    <span className={css.ticketSegmentInfoDetails}>
+                        {segmentInfo[item].details}
+                    </span>
+                </div>
+            ))}
         </div>
     );
 };

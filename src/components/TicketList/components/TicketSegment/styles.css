@@ -3,7 +3,24 @@
 	justify-content: space-between;
 }
 
+.ticketSegment:not(:last-child) {
+	margin-bottom: 10px;
+}
+
 .ticketSegmentInfo {
 	display: flex;
 	flex-direction: column;
+}
+
+.ticketSegmentInfoTitle {
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 600;
+	color: #A0B0B9;
+}
+
+.ticketSegmentInfoDetails {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 21px;
 }

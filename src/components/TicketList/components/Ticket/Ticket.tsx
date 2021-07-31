@@ -1,6 +1,6 @@
-import React, { FC, ReactElement } from 'react';
-import { ITicket, ITicketSegment } from '../../../../types';
-import { TicketSegment } from '../TicketSegment/TicketSegment';
+import React, { FC } from 'react';
+import { ITicket } from '../../../../types';
+import { TicketSegment } from '../TicketSegment';
 import css from './styles.css';
 import MockImg from './s7.svg';
 
@@ -15,7 +15,9 @@ export const Ticket: FC<Props> = ({ ticket }) => {
     return (
         <div className={css.ticket}>
             <div className={css.ticketHeader}>
-                <div className={css.ticketPrice}>{ticket.price}</div>
+                <div className={css.ticketPrice}>
+                    {ticket.price.toLocaleString().toLocaleUpperCase()} P
+                </div>
                 <div className={css.ticketLogo}>
                     <img src={MockImg} alt="s7logo" />
                 </div>

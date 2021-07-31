@@ -32,11 +32,11 @@
 }
 
 .toggleGroup input[type=radio]:checked + label {
-	background: #2196F3;
+	background: var(--color-blue-primary);
 	color: #fff;
-	border-color: #2196F3;
+	border-color: var(--color-blue-primary);
 }
 
 .toggleGroup label:hover {
-	color: #2196F3;
+	color: var(--color-blue-primary);
 }

@@ -4,10 +4,21 @@
 	background-color: #fff;
 	padding: 20px;
 	margin-bottom: 20px;
-	border-radius: 6px;
+	border-radius: 5px;
+	box-shadow: 0 2px 8px 0 #0000001A;
+;
 }
 
 .ticketHeader {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.ticketPrice {
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 600;
+	color: var(--color-blue-primary);
 }
