@@ -9,26 +9,28 @@
 
 .toggleGroup label {
 	display: inline-block;
-	cursor: pointer;
+	box-sizing: border-box;
 	padding: 15px;
+	width: 100%;
+	cursor: pointer;
 	font-size: 12px;
 	font-weight: bold;
 	font-family: 'Open Sans', sans-serif;
 	line-height: 20px;
-	border: 1px solid #999;
+	letter-spacing: 0.5px;
+	border: 1px solid #DFE5EC;
 	border-right: none;
-
 }
 
 .toggleGroup .toggleItem:first-child label {
-	border-bottom-left-radius: 6px;
-	border-top-left-radius: 6px;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
 }
 
 .toggleGroup .toggleItem:last-child label {
-	border-right: 1px solid #999;
-	border-bottom-right-radius: 6px;
-	border-top-right-radius: 6px;
+	border-right: 1px solid #DFE5EC;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 .toggleGroup input[type=radio]:checked + label {
@@ -39,4 +41,8 @@
 
 .toggleGroup label:hover {
 	color: var(--color-blue-primary);
+}
+
+.toggleItem {
+	flex-grow: 1;
 }
