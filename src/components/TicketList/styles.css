@@ -1,0 +1,13 @@
+.showMoreBtn {
+	width: 100%;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	text-align: center;
+	color: #FFFFFF;
+	background-color: var(--color-blue-primary);
+	padding: 15px 20px;
+	border: none;
+	border-radius: 5px;
+}

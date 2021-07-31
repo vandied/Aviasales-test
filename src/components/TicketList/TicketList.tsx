@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { mockTicketList } from './__mocks__/tickets';
 import { Ticket } from './components/Ticket';
+import css from './styles.css';
 
 export const TicketList: FC = () => {
     const tickets = mockTicketList;
@@ -12,6 +13,7 @@ export const TicketList: FC = () => {
                 // для генерациии уникального ключа элемента списка
                 <Ticket key={`${ticket.carrier}-${i}`} ticket={ticket} />
             ))}
+            <button className={css.showMoreBtn}>Показать еще 5 билетов!</button>
         </>
     );
 };
