@@ -5,7 +5,7 @@ import { TransferFilter, TicketToggle, TicketList } from './components';
 export const App: FC = () => (
     <div className={css.searchingPage}>
         <TransferFilter />
-        <div>
+        <div className={css.searchingResults}>
             <TicketToggle />
             <TicketList />
         </div>

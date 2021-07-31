@@ -1,6 +1,8 @@
-import React, { FC } from 'react';
-import { ITicket } from '../../../../types';
+import React, { FC, ReactElement } from 'react';
+import { ITicket, ITicketSegment } from '../../../../types';
+import { TicketSegment } from '../TicketSegment/TicketSegment';
 import css from './styles.css';
+import MockImg from './s7.svg';
 
 interface Props {
     ticket: ITicket;
@@ -14,9 +16,12 @@ export const Ticket: FC<Props> = ({ ticket }) => {
         <div className={css.ticket}>
             <div className={css.ticketHeader}>
                 <div className={css.ticketPrice}>{ticket.price}</div>
+                <div className={css.ticketLogo}>
+                    <img src={MockImg} alt="s7logo" />
+                </div>
             </div>
-            <div className={css.ticketSegmentForward}>{segmentForward.origin}</div>
-            <div className={css.ticketSegmentBack}>{segmentBack.origin}</div>
+            <TicketSegment segment={segmentForward} />
+            <TicketSegment segment={segmentBack} />
         </div>
     );
 };

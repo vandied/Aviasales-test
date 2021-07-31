@@ -1,0 +1,9 @@
+.ticketSegment {
+	display: flex;
+	justify-content: space-between;
+}
+
+.ticketSegmentInfo {
+	display: flex;
+	flex-direction: column;
+}

@@ -1,7 +1,13 @@
 .ticket {
 	display: flex;
+	flex-direction: column;
 	background-color: #fff;
 	padding: 20px;
 	margin-bottom: 20px;
 	border-radius: 6px;
+}
+
+.ticketHeader {
+	display: flex;
+	justify-content: space-between;
 }

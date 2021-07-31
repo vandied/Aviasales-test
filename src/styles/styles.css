@@ -13,3 +13,7 @@ body {
 .searchingPage [class*="transferContainer"] {
     margin-right: 16px;
 }
+
+.searchingResults {
+    min-width: 500px;
+}

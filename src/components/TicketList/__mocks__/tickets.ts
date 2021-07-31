@@ -7,14 +7,14 @@ export const mockTicket = {
         {
             origin: 'MOV',
             destination: 'HKT',
-            date: '10:45',
+            date: '"2021-07-31T11:51:55Z"',
             stops: ['HKG', 'JNB'],
             duration: 3,
         },
         {
             origin: 'HKT',
             destination: 'MOV',
-            date: '11:20',
+            date: '"2021-08-10T11:51:55Z"',
             stops: ['HKG'],
             duration: 3,
         },
