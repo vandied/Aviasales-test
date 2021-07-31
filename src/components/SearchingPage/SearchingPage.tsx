@@ -9,9 +9,9 @@ export const SearchingPage = observer(() => {
 
     useEffect(() => {
         if (!store.isLoadingId) {
-            store.getTickets();
+            store.fetchTickets();
         }
-    }, []);
+    }, [store.isLoadingId]);
 
     return (
         <div className={css.searchingPage}>

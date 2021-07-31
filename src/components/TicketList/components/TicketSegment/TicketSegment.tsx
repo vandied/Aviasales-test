@@ -1,23 +1,22 @@
 import React, { FC } from 'react';
 import { ITicketSegment } from '../../../../types';
 import css from './styles.css';
+import { getLengthRoute, getRouteTime, stopsCountSuffix } from './helpers';
 
 interface Props {
     segment: ITicketSegment;
 }
 
 export const TicketSegment: FC<Props> = ({ segment }) => {
-    const stopsCountSuffix = segment.stops.length === 1 ? 'ПЕРЕСАДКА' : 'ПЕРЕСАДКИ';
-
     const segmentInfo = {
         route: {
             title: `${segment.origin} - ${segment.destination}`,
-            details: segment.date,
+            details: getRouteTime(segment.date, segment.duration),
         },
-        length: { title: 'В ПУТИ', details: segment.duration },
+        length: { title: 'В ПУТИ', details: getLengthRoute(segment.duration) },
         stops: {
-            title: `${segment.stops.length} ${stopsCountSuffix}`,
-            details: segment.stops.join(', '),
+            title: stopsCountSuffix(segment.stops.length),
+            details: segment.stops.join(', ') || '–',
         },
     };
 

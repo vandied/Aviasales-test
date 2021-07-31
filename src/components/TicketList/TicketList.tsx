@@ -1,13 +1,15 @@
-import React, { FC } from 'react';
-import { mockTicketList } from './__mocks__/tickets';
+import React from 'react';
+import { observer } from 'mobx-react';
+import { useStores } from '../../shared/entities';
 import { Ticket } from './components/Ticket';
 import css from './styles.css';
 
-export const TicketList: FC = () => {
-    const tickets = mockTicketList;
+export const TicketList = observer(() => {
+    const { SearchingStore: store } = useStores();
+
     return (
         <>
-            {tickets.map((ticket, i) => (
+            {store.getRenderedTickets.map((ticket, i) => (
                 // тут, наверное на реальных данных, у всех вариантов перелета есть какие-то уникальные id,
                 // которые можно использовать как key, сейчас я бы уточнила, какие поля можно использовать
                 // для генерациии уникального ключа элемента списка
@@ -16,4 +18,4 @@ export const TicketList: FC = () => {
             <button className={css.showMoreBtn}>Показать еще 5 билетов!</button>
         </>
     );
-};
+});

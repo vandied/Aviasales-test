@@ -1,10 +1,11 @@
-import { makeObservable, observable } from 'mobx';
+import { computed, makeObservable, observable } from 'mobx';
 import { Api } from '../../../api';
 import { ITicket } from '../../../../types';
 
 export class SearchingStore {
     private readonly api: Api;
     private _searchId: string | undefined;
+    private _stopLoading = false;
 
     public isLoadingId = false;
     public ticketList: ITicket[] = [];
@@ -13,10 +14,16 @@ export class SearchingStore {
         makeObservable(this, {
             isLoadingId: observable,
             ticketList: observable,
+
+            getRenderedTickets: computed,
         });
 
         this.api = api;
         this.getSearchId();
+    }
+
+    public get getRenderedTickets(): ITicket[] {
+        return this.ticketList.slice(0, 5);
     }
 
     private async getSearchId(): Promise<void> {
@@ -30,9 +37,11 @@ export class SearchingStore {
         }
     }
 
-    public async getTickets(): Promise<void> {
-        if (this._searchId) {
-            await this.api.search.getTickets(this._searchId);
+    public async fetchTickets(): Promise<void> {
+        if (this._searchId && !this._stopLoading) {
+            const { tickets, stop } = await this.api.search.getTickets(this._searchId);
+            this.ticketList = tickets;
+            this._stopLoading = stop;
         }
     }
 }
