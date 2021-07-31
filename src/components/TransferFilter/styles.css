@@ -1,4 +1,6 @@
 .transferContainer {
+	align-self: baseline;
+	box-sizing: border-box;
 	min-width: 232px;
 	padding: 20px;
 	margin-right: 16px;

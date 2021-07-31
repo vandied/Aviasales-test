@@ -8,15 +8,26 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.searchingPage {
+.searchingRoot {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
     width: 960px;
-    padding: 0 100px;
     margin: 0 auto;
+
+}
+
+.searchingPage {
+    display: flex;
+    padding: 0 100px;
 }
 
 .searchingResults {
     min-width: 500px;
+}
+
+.searchingLogo {
+    align-self: center;
+    margin: 30px 0;
 }
