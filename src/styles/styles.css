@@ -1,6 +1,7 @@
 @import './variables.css';
 
 body {
+    margin: 0;
     background-color: #F3F7FA;
     font-size: 14px;
     line-height: 20px;
@@ -10,10 +11,10 @@ body {
 .searchingPage {
     display: flex;
     justify-content: center;
-}
-
-.searchingPage [class*="transferContainer"] {
-    margin-right: 16px;
+    box-sizing: border-box;
+    width: 960px;
+    padding: 0 100px;
+    margin: 0 auto;
 }
 
 .searchingResults {

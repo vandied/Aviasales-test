@@ -4,7 +4,7 @@ import { transferOptions } from './consts';
 
 export const TransferFilter: FC = () => (
     <div className={css.transferContainer}>
-        <p className={css.titleContainer}>Количество пересадок</p>
+        <p className={css.titleContainer}>КОЛИЧЕСТВО ПЕРЕСАДОК</p>
         {transferOptions.map((opt) => (
             <div className={css.transferItem} key={opt.id}>
                 <input type="checkbox" id={String(opt.id)} />
