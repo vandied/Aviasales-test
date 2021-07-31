@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { ITicket } from '../../../../types';
 import { TicketSegment } from '../TicketSegment';
 import css from './styles.css';
-import MockImg from './s7.svg';
 
 interface Props {
     ticket: ITicket;
@@ -19,7 +18,10 @@ export const Ticket: FC<Props> = ({ ticket }) => {
                     {ticket.price.toLocaleString().toLocaleUpperCase()} P
                 </div>
                 <div className={css.ticketLogo}>
-                    <img src={MockImg} alt="s7logo" />
+                    <img
+                        src={`https://pics.avs.io/99/36/${ticket.carrier}.png`}
+                        alt="s7logo"
+                    />
                 </div>
             </div>
             <TicketSegment segment={segmentForward} />
